@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - SkyTech</title>
+    <link rel="stylesheet" href="../assets/css/auth.css">
+</head>
+    <body>
+        <div class="auth-card">
+            <!-- Left panel -->
+            <div class="auth-brand-panel">
+                <div>
+                    <img src="../assets/Logo/Logo.png" alt="SkyTech logo" width="210">
+                </div>
+            </div>
+
+            <!-- Right panel -->
+            <div class="auth-form-panel">
+            <div class="auth-heading">Account Registration Page</div><br>
+        
+            <form id="auth-form" action="/register" method="POST">
+                <div class="form-field">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="your.email@example.com" required/>
+                </div>
+
+                <div class="form-field">
+                    <label for="username">Username</label>
+                    <input id="username" name="username" type="text" placeholder="Anything" required/>
+                </div>
+
+                <div class="form-field">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="••••••••" aria-describedby="password-requirements" required />
+                </div>
+
+                <div class="password-requirements" id="password-requirements" aria-hidden="true">
+                    <div class="password-requirements-content">
+                    <p><strong>Password must contain:</strong></p>
+                    <p id="password-lowercase" class="is-invalid"> a lowercase letter</p>
+                    <p id="password-uppercase" class="is-invalid"> an uppercase letter</p>
+                    <p id="password-number" class="is-invalid"> a number</p>
+                    <p id="password-symbol" class="is-invalid"> a symbol</p>
+                    <p id="password-length" class="is-invalid"> at least 8 characters</p>
+                    </div>
+                </div>
+
+                <div class="auth-switch">
+                    <span class="auth-switch-text">
+                        Already have an account?&nbsp;
+                        <a href="./Login.html" class="auth-switch-link">Login</a>
+                    </span>
+                </div>
+
+                <button type="submit" class="auth-submit-button">Create Account</button>
+
+                <div class="auth-divider">
+                    <span>OR</span>
+                </div>
+
+                <button id="google-auth-button" type="button" class="auth-provider-button">
+                    <img src="../assets/Logo/Google.png"
+                        alt="Google logo"
+                        class="auth-provider-icon">
+                    <span>Register with Google</span>
+                </button>
+
+                <button id="apple-auth-button" type="button" class="auth-provider-button">
+                    <img src="../assets/Logo/Apple.png"
+                        alt="Apple logo"
+                        class="auth-provider-icon">
+                    <span>Register with Apple</span>
+                </button>
+            </form>
+
+            </div>
+        </div>
+
+            <dialog class="captcha-background" id="captcha-overlay" aria-label="Complete the CAPTCHA to create your account">
+                <div class="captcha-containers">
+
+                    <label class="human-check" id="humanCheck">
+                        <input class="checkbox" id="checkbox" type="radio" name="human-confirmation" value="human" aria-label="I'm not a robot">
+                        <span class="human-check-text">I'm not a robot</span>
+
+                        <div class="verification-brand">
+                            <img style="width: 35px; height: auto;" src="../assets/Logo/Captcha.png" alt="aCaptcha Logo">
+                            <small>aCaptcha</small>
+                        </div>
+                    </label>
+
+                    <label class="human-check" id="captcha-confirmation" hidden>
+                        <input class="checkbox" id="captcha-confirmation-input" type="radio" name="human-certainty" value="sure" aria-label="Are you sure?">
+                        <span class="human-check-text">Are you sure?</span>
+                        <span class="verification-brand">
+                            <img style="width: 35px; height: auto;" src="../assets/Logo/Captcha.png" alt="aCaptcha Logo">
+                            <small>aCaptcha</small>
+                        </span>
+                    </label>
+
+                    <section class="waldo-challenge" id="waldo-challenge" aria-labelledby="waldo-title" hidden>
+                        <header class="waldo-challenge-header">
+                            <p>Click on the person in the picture</p>
+                            <h2 id="waldo-title">Find Waldo LoL</h2>
+                        </header>
+                        <canvas id="waldo-canvas" tabindex="0" aria-label="Find Waldo in the beach scene. Click or tap on Waldo. Use arrow keys to move a selection cursor and Enter to select.">
+                            Find Waldo in the beach scene.
+                        </canvas>
+
+                        <footer class="waldo-challenge-footer">
+                            <p id="waldo-status" role="status">Loading picture…</p>
+                            <span class="verification-brand"><small>aCaptcha</small></span>
+                        </footer>
+                    </section>
+                </div>
+            </dialog>
+
+        <script src="../javaScripts/auth.js"></script>
+        <script src="../javaScripts/waldocaptcha.js"></script>
+    </body>
+</html>

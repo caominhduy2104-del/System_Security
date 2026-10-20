@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SkyTech</title>
+    <link rel="stylesheet" href="../assets/css/auth.css">
+</head>
+    <body>
+        <div class="auth-card">
+            <!-- Left panel -->
+            <div class="auth-brand-panel">
+                <div>
+                    <img src="../assets/Logo/Logo.png" alt="SkyTech logo" width="210">
+                </div>
+            </div>
+
+            <!-- Right panel -->
+            <div class="auth-form-panel">
+            <div class="auth-heading">Account Login Page</div><br>
+        
+            <form id="auth-form" action="/login" method="POST">
+                <div class="form-field">
+                    <label for="username">Username</label>
+                    <input id="username" name="username" type="text" placeholder="Anything" required/>
+                </div>
+
+                <div class="form-field">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" placeholder="••••••••" required />
+                </div>
+
+                <div class="auth-switch">
+                    <span class="auth-switch-text">
+                        Don't have an account?&nbsp;
+                        <a href="./Register.html" class="auth-switch-link">Create an account</a>
+                    </span>
+                </div>
+                
+                <button type="submit" class="auth-submit-button">Login</button>
+
+                <div class="auth-divider">
+                    <span>OR</span>
+                </div>
+
+                <button id="google-auth-button" type="button" class="auth-provider-button">
+                    <img src="../assets/Logo/Google.png"
+                        alt="Google logo"
+                        class="auth-provider-icon">
+                    <span>Log in with Google</span>
+                </button>
+
+                <button id="apple-auth-button" type="button" class="auth-provider-button">
+                    <img src="../assets/Logo/Apple.png"
+                        alt="Apple logo"
+                        class="auth-provider-icon">
+                    <span>Log in with Apple</span>
+                </button>
+            </form>
+        </div>
+        </div>
+        <script src="../javaScripts/auth.js"></script>
+    </body>
+</html>
